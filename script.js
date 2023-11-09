@@ -1,25 +1,11 @@
-//your code here
-
-document.addEventListener("DOMContentLoaded", function () {
-  const newTodoInput = document.getElementById("newTodoInput");
-  const addTodoBtn = document.getElementById("addTodoBtn");
-  const todoList = document.getElementById("todoList");
-
-  addTodoBtn.addEventListener("click", function () {
-    const todoText = newTodoInput.value.trim(); // Trim removes leading/trailing spaces
-
-    if (todoText !== "") {
-      // Check if the input is not empty
-      const listItem = document.createElement("li");
-      listItem.textContent = todoText;
-      todoList.appendChild(listItem);
-      newTodoInput.value = ""; // Clear the input field
-    }
-  });
-
-  newTodoInput.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-      addTodoBtn.click(); // Trigger the button click event when Enter is pressed
-    }
-  });
-});
+const input = document.getElementById('newTodoInput')
+const btn = document.getElementById('addTodoBtn')
+const todoList = document.getElementById('todoList')
+btn.addEventListener('click',e=>{
+	if(input.value!=""){
+		const li = document.createElement('li')
+		li.innerText = input.value
+		todoList.appendChild(li)
+		input.value = ""
+	}
+})
